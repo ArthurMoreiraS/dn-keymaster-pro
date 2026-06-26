@@ -1,34 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  KeyRound,
-  Copy,
-  ShieldCheck,
-  Cpu,
-  Crown,
-  Car,
-  Clock,
-  MapPin,
-  Phone,
-  MessageCircle,
-  CheckCircle2,
-  Wrench,
-} from "lucide-react";
-import heroKey from "@/assets/hero-key.jpg";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import workshopBg from "@/assets/workshop-bg.jpg";
+import premiumKey from "@/assets/premium-key.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DN Chaveiro Automotivo | Chaves, Cópias e Reset de Airbag" },
+      { title: "DN Chaveiro Automotivo | Chaves Codificadas, Premium e Reset de Airbag" },
       {
         name: "description",
         content:
-          "Chaveiro automotivo em Brasília. Chaves codificadas, cópias e confecção para Audi, BMW, Mercedes, Land Rover e reset de módulos de airbag GWM, BYD e demais marcas.",
+          "Chaveiro automotivo em Brasília (Taguatinga Sul). Chaves codificadas e cópias para Audi, BMW, Mercedes, Land Rover, GWM e BYD, além de reset de módulo de airbag. Atendimento 24h.",
       },
     ],
   }),
@@ -41,75 +23,79 @@ const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Olá! Vim pelo site da DN Chaveiro Automotivo e gostaria de um orçamento.",
 )}`;
 
+const brands = [
+  "AUDI", "BMW", "MERCEDES", "LAND ROVER", "PORSCHE", "VOLVO",
+  "JEEP", "TOYOTA", "HONDA", "VW", "FIAT", "JAC",
+  "BYD", "GWM", "CHERY", "HYUNDAI",
+];
+
 const services = [
   {
-    icon: KeyRound,
-    title: "Chaves Codificadas",
-    desc: "Confecção e programação de chaves transponder, presenciais e canivete para todas as marcas nacionais e importadas.",
+    n: "01",
+    t: "Cópia & Chaves Codificadas",
+    d: "Chaves pantográficas, canivete e telecomandos com transponder original. Programação para frota nacional e importada.",
+    tags: ["VVDI", "AUTEL", "OBDSTAR"],
   },
   {
-    icon: Copy,
-    title: "Cópia de Chaves",
-    desc: "Cópias rápidas e precisas com equipamentos de última geração, mantendo o padrão original do veículo.",
+    n: "02",
+    t: "Reset de Módulo de Airbag",
+    d: "Reset de crash data pós-colisão em todas as marcas — incluindo a linha elétrica GWM (Haval, Ora) e BYD (Dolphin, Seal, Song).",
+    tags: ["GWM", "BYD", "PÓS-COLISÃO"],
   },
   {
-    icon: Crown,
-    title: "Linha Premium",
-    desc: "Atendimento especializado para Audi, BMW, Mercedes-Benz, Land Rover, Porsche, Volvo e demais marcas premium.",
-  },
-  {
-    icon: Cpu,
-    title: "Reset de Módulo de Airbag",
-    desc: "Reset completo de módulos pós-colisão para todos os veículos, incluindo GWM, BYD e linha elétrica.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Chaves Smart Key",
-    desc: "Programação e substituição de chaves presenciais (proximidade) com botão start/stop.",
-  },
-  {
-    icon: Wrench,
-    title: "Reparos e Carcaças",
-    desc: "Troca de carcaças, reparo de chaves canivete, baterias e botões com garantia de funcionamento.",
+    n: "03",
+    t: "Linha Premium & Smart Key",
+    d: "Programação completa de chaves de presença para Audi, BMW, Mercedes-Benz, Land Rover, Porsche e Volvo. Recuperação total de chaves perdidas.",
+    tags: ["CAS / FEM / BDC", "FBS4", "KVM"],
   },
 ];
 
-const brands = [
-  "Audi", "BMW", "Mercedes-Benz", "Land Rover", "Porsche", "Volvo",
-  "Volkswagen", "Toyota", "Honda", "Fiat", "Chevrolet", "Hyundai",
-  "Jeep", "Renault", "Nissan", "GWM", "BYD", "Caoa Chery",
+const pillars = [
+  {
+    t: "Equipamento original",
+    d: "Scanners e softwares homologados — os mesmos usados em concessionárias alemãs, garantindo a integridade dos módulos eletrônicos.",
+  },
+  {
+    t: "Atendimento no local",
+    d: "Equipe móvel pronta para abertura técnica sem danos e confecção de chaves em qualquer ponto de Brasília e entorno.",
+  },
+  {
+    t: "Garantia técnica",
+    d: "Toda codificação acompanha backup de dados e garantia formal de funcionamento da chave e do módulo.",
+  },
 ];
 
 const faqs = [
   {
-    q: "Vocês fazem chaves para carros premium como Audi, BMW e Mercedes?",
-    a: "Sim. Trabalhamos com confecção e programação completa para toda a linha premium — Audi, BMW, Mercedes-Benz, Land Rover, Porsche e Volvo — com equipamentos homologados.",
+    q: "Vocês fazem chaves para Audi, BMW e Mercedes?",
+    a: "Sim. Trabalhamos com toda a linha premium — Audi (A/Q completa), BMW (CAS, FEM, BDC), Mercedes-Benz (IR e FBS4), Land Rover (KVM), Porsche e Volvo — com equipamentos homologados.",
   },
   {
-    q: "O que é o reset de módulo de airbag e quando é necessário?",
-    a: "Após um acionamento (colisão), o módulo de airbag fica travado com códigos de falha. Fazemos o reset original do módulo, deixando-o pronto para uso novamente, inclusive em veículos chineses como GWM e BYD.",
+    q: "Qual o prazo para uma cópia de chave?",
+    a: "Chaves simples e pantográficas ficam prontas em cerca de 20 minutos. Chaves codificadas levam de 40 a 90 minutos, dependendo do modelo. Linha premium pode exigir agendamento da chave virgem.",
   },
   {
-    q: "Em quanto tempo fica pronta uma chave codificada?",
-    a: "Na maioria dos casos a chave é entregue no mesmo dia. Modelos premium específicos podem exigir agendamento prévio para garantir disponibilidade da chave virgem.",
+    q: "Perdi todas as chaves. E agora?",
+    a: "Sem problema. Vamos até o veículo, fazemos a abertura técnica sem danos e confeccionamos uma chave nova do zero direto pelo módulo do carro.",
   },
   {
-    q: "Vocês atendem em domicílio?",
-    a: "Sim, atendemos emergências e situações onde o veículo não pode ser deslocado. Entre em contato pelo WhatsApp para confirmar a região.",
+    q: "O que é o reset do módulo de airbag?",
+    a: "Após uma colisão, o módulo trava com códigos de falha. Fazemos o reset do crash data deixando o módulo original pronto para uso — inclusive em GWM e BYD.",
   },
   {
-    q: "Qual a garantia dos serviços?",
-    a: "Todas as chaves confeccionadas e serviços de programação possuem garantia. Trabalhamos apenas com peças e insumos de qualidade comprovada.",
+    q: "Atendem em domicílio e em emergências?",
+    a: "Sim. Atendemos emergências 24h pelo WhatsApp em toda Brasília e regiões próximas. Confirme a localização antes do deslocamento.",
   },
 ];
 
 function Home() {
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-orange-500 selection:text-black">
       <Header />
       <Hero />
+      <BrandTicker />
       <Services />
-      <Brands />
+      <Process />
       <Premium />
       <About />
       <FAQ />
@@ -120,25 +106,48 @@ function Home() {
   );
 }
 
+function Mono({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <span
+      className={className}
+      style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+    >
+      {children}
+    </span>
+  );
+}
+
 function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6">
-        <a href="#top" className="flex items-center gap-2">
-          <Logo />
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+        <a href="#top" className="flex items-center gap-3">
+          <div className="flex h-10 w-10 items-center justify-center bg-orange-500 text-black font-black italic">
+            DN
+          </div>
+          <div className="leading-none">
+            <div className="font-display text-lg font-extrabold tracking-wide">
+              DN CHAVEIRO
+            </div>
+            <Mono className="text-[9px] uppercase tracking-[0.3em] text-zinc-500">
+              Automotivo · Brasília
+            </Mono>
+          </div>
         </a>
-        <nav className="hidden items-center gap-8 text-sm font-medium text-muted-foreground md:flex">
-          <a href="#servicos" className="transition hover:text-foreground">Serviços</a>
-          <a href="#marcas" className="transition hover:text-foreground">Marcas</a>
-          <a href="#sobre" className="transition hover:text-foreground">Sobre</a>
-          <a href="#faq" className="transition hover:text-foreground">FAQ</a>
-          <a href="#contato" className="transition hover:text-foreground">Contato</a>
+        <nav
+          className="hidden items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex"
+          style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+        >
+          <a href="#servicos" className="hover:text-orange-500 transition">Serviços</a>
+          <a href="#premium" className="hover:text-orange-500 transition">Premium</a>
+          <a href="#faq" className="hover:text-orange-500 transition">FAQ</a>
+          <a href="#contato" className="hover:text-orange-500 transition">Contato</a>
         </nav>
         <a
           href={`tel:+${WHATSAPP}`}
-          className="hidden items-center gap-2 rounded-md bg-brand px-4 py-2 text-sm font-semibold text-brand-foreground transition hover:opacity-90 sm:inline-flex"
+          className="hidden items-center gap-2 border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider hover:border-orange-500 sm:inline-flex"
         >
-          <Phone className="h-4 w-4" />
+          <Phone className="h-3.5 w-3.5 text-orange-500" />
           {PHONE_DISPLAY}
         </a>
       </div>
@@ -146,131 +155,146 @@ function Header() {
   );
 }
 
-function Logo() {
-  return (
-    <div className="flex items-center gap-2.5">
-      <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand text-brand-foreground">
-        <KeyRound className="h-5 w-5" strokeWidth={2.5} />
-      </div>
-      <div className="leading-none">
-        <div className="font-display text-xl font-extrabold tracking-wide">DN Chaveiro</div>
-        <div className="text-[10px] font-medium uppercase tracking-[0.25em] text-muted-foreground">
-          Automotivo
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden border-b border-border/60">
-      <div className="bg-grid absolute inset-0 opacity-60" />
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand to-transparent" />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:py-28">
-        <div className="relative">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand" /> Atendimento Rápido em Brasília
+    <section
+      id="top"
+      className="relative flex min-h-[88vh] items-center overflow-hidden border-b border-white/10"
+    >
+      <div className="absolute inset-0">
+        <img
+          src={workshopBg}
+          alt="Oficina de chaveiro automotivo DN — máquina de corte a laser"
+          width={1920}
+          height={1280}
+          className="h-full w-full object-cover opacity-40"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/85 to-[#0a0a0a]/40" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_60%_50%,oklch(0.72_0.21_47/0.12),transparent_60%)]" />
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 py-24">
+        <div className="max-w-4xl">
+          <div
+            className="mb-8 inline-flex items-center gap-3 border border-orange-500/40 bg-orange-500/10 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.25em] text-orange-500"
+            style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-orange-500" />
+            </span>
+            Taguatinga Sul · Brasília · DF
           </div>
-          <h1 className="mt-5 font-display text-5xl font-black leading-[0.95] text-balance sm:text-6xl lg:text-7xl">
-            Chaves automotivas <span className="text-brand">de verdade.</span>
-            <br />Do popular ao premium.
+
+          <h1 className="font-display text-6xl font-black leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl">
+            CHAVES DE
+            <br />
+            <span className="italic text-orange-500">PRECISÃO.</span>
           </h1>
-          <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Confecção, cópia e programação de chaves codificadas para todas as marcas — incluindo
-            Audi, BMW, Mercedes e Land Rover — além de reset de módulos de airbag para GWM, BYD e
-            demais montadoras.
+
+          <p className="mt-8 max-w-xl text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
+            Do popular ao premium. Codificação técnica de chaves, cópias e reset
+            de módulo de airbag para linha alemã, nacional e elétrica
+            (GWM &amp; BYD).
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+
+          <div className="mt-10 flex flex-wrap gap-4">
             <a
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-md bg-brand px-6 py-3 text-sm font-bold uppercase tracking-wider text-brand-foreground transition hover:opacity-90"
+              className="inline-flex items-center gap-3 bg-orange-500 px-8 py-4 text-sm font-black uppercase tracking-widest text-black transition hover:bg-orange-400"
             >
-              <MessageCircle className="h-4 w-4" /> Solicitar Orçamento
+              <MessageCircle className="h-4 w-4" /> Emergência 24h
             </a>
             <a
               href="#servicos"
-              className="inline-flex items-center gap-2 rounded-md border border-border bg-surface px-6 py-3 text-sm font-bold uppercase tracking-wider text-foreground transition hover:border-brand"
+              className="inline-flex items-center gap-3 border border-white/25 px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:border-orange-500 hover:text-orange-500"
             >
-              Ver Serviços
+              Nossos serviços
             </a>
           </div>
-          <div className="mt-10 grid grid-cols-3 gap-4 border-t border-border/60 pt-6">
-            {[
-              { k: "+10", v: "Anos de experiência" },
-              { k: "100%", v: "Marcas atendidas" },
-              { k: "24h", v: "Atendimento WhatsApp" },
-            ].map((s) => (
-              <div key={s.v}>
-                <div className="font-display text-3xl font-extrabold text-brand">{s.k}</div>
-                <div className="mt-1 text-xs text-muted-foreground">{s.v}</div>
-              </div>
-            ))}
-          </div>
         </div>
-        <div className="relative">
-          <div className="absolute -inset-6 -z-10 rounded-2xl bg-brand/20 blur-3xl" />
-          <div className="overflow-hidden rounded-2xl border border-border shadow-2xl">
-            <img
-              src={heroKey}
-              alt="Chave automotiva codificada e botão start/stop"
-              width={1600}
-              height={1024}
-              className="h-full w-full object-cover"
-            />
-          </div>
-          <div className="absolute -bottom-5 -left-5 hidden rounded-xl border border-border bg-surface px-5 py-4 shadow-xl sm:block">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-brand text-brand-foreground">
-                <ShieldCheck className="h-5 w-5" />
-              </div>
-              <div>
-                <div className="text-sm font-semibold">Serviço com garantia</div>
-                <div className="text-xs text-muted-foreground">Equipamentos profissionais</div>
-              </div>
-            </div>
-          </div>
-        </div>
+
+        <Mono className="absolute bottom-8 right-6 hidden text-right text-[10px] leading-relaxed tracking-widest text-zinc-600 md:block">
+          LAT −15.8344
+          <br />
+          LON −48.0519
+          <br />
+          <span className="text-zinc-400">CSA 02 LOTE 07 LOJA 01</span>
+        </Mono>
       </div>
     </section>
   );
 }
 
-function SectionHeader({ kicker, title, desc }: { kicker: string; title: string; desc?: string }) {
+function BrandTicker() {
   return (
-    <div className="mx-auto max-w-2xl text-center">
-      <div className="text-xs font-bold uppercase tracking-[0.3em] text-brand">{kicker}</div>
-      <h2 className="mt-3 font-display text-4xl font-black sm:text-5xl">{title}</h2>
-      {desc && <p className="mt-4 text-muted-foreground">{desc}</p>}
+    <div className="border-y border-white/10 bg-white py-6">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-wrap items-center justify-between gap-x-8 gap-y-3 opacity-50">
+          {brands.slice(0, 8).map((b) => (
+            <span
+              key={b}
+              className="font-display text-xl font-black italic tracking-tighter text-zinc-900 sm:text-2xl"
+            >
+              {b}
+            </span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
 
 function Services() {
   return (
-    <section id="servicos" className="border-b border-border/60 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeader
-          kicker="O que fazemos"
-          title="Serviços completos para o seu veículo"
-          desc="Da chave básica ao módulo eletrônico mais avançado — atendimento técnico, ágil e com garantia."
-        />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    <section id="servicos" className="border-b border-white/10 py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="mb-16 grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-8">
+            <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+              [ Serviços ]
+            </Mono>
+            <h2 className="mt-4 font-display text-5xl font-black uppercase italic leading-[0.9] tracking-tight sm:text-6xl">
+              Nossas
+              <br />
+              <span className="text-orange-500">Soluções Técnicas</span>
+            </h2>
+          </div>
+          <div className="lg:col-span-4">
+            <p
+              className="border-l border-orange-500 pl-6 text-sm leading-relaxed text-zinc-400"
+              style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
+            >
+              Laboratório equipado com scanners originais e máquinas de corte
+              computadorizado para máxima fidelidade em chaves codificadas.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-px border border-white/5 bg-white/5 md:grid-cols-3">
           {services.map((s) => (
             <div
-              key={s.title}
-              className="group relative overflow-hidden rounded-xl border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-brand"
+              key={s.n}
+              className="group relative bg-[#0a0a0a] p-10 transition-colors hover:bg-zinc-900/60"
             >
-              <div className="absolute -right-10 -top-10 h-28 w-28 rounded-full bg-brand/10 blur-2xl transition group-hover:bg-brand/30" />
-              <div className="relative">
-                <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand text-brand-foreground">
-                  <s.icon className="h-6 w-6" strokeWidth={2.2} />
-                </div>
-                <h3 className="mt-5 font-display text-xl font-bold">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              <Mono className="text-sm text-orange-500">[ {s.n} ]</Mono>
+              <h3 className="mt-6 font-display text-2xl font-bold uppercase leading-tight tracking-tight">
+                {s.t}
+              </h3>
+              <p className="mt-4 text-sm leading-relaxed text-zinc-400">{s.d}</p>
+              <div className="mt-8 flex flex-wrap gap-2">
+                {s.tags.map((t) => (
+                  <Mono
+                    key={t}
+                    className="border border-white/10 px-2 py-1 text-[10px] uppercase tracking-widest text-zinc-500"
+                  >
+                    {t}
+                  </Mono>
+                ))}
               </div>
+              <div className="mt-8 h-px w-10 bg-orange-500 transition-all duration-500 group-hover:w-full" />
             </div>
           ))}
         </div>
@@ -279,22 +303,30 @@ function Services() {
   );
 }
 
-function Brands() {
+function Process() {
+  const steps = [
+    { n: "01", t: "Diagnóstico", d: "Identificamos modelo, ano e tipo de chave/módulo via OBD." },
+    { n: "02", t: "Execução", d: "Corte, programação ou reset realizado com equipamento original." },
+    { n: "03", t: "Entrega & Garantia", d: "Teste presencial, backup dos dados e garantia formal." },
+  ];
   return (
-    <section id="marcas" className="border-b border-border/60 bg-surface/40 py-20 sm:py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeader
-          kicker="Marcas atendidas"
-          title="Toda marca. Todo modelo."
-          desc="Trabalhamos com o portfólio completo de fabricantes — nacionais, importadas, premium e elétricas."
-        />
-        <div className="mt-12 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3 md:grid-cols-6">
-          {brands.map((b) => (
-            <div
-              key={b}
-              className="flex h-24 items-center justify-center bg-surface px-4 text-center font-display text-lg font-bold uppercase tracking-wider text-foreground/80 transition hover:bg-surface-2 hover:text-brand"
-            >
-              {b}
+    <section className="border-b border-white/10 bg-zinc-950 py-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+          [ Como funciona ]
+        </Mono>
+        <div className="mt-10 grid gap-10 md:grid-cols-3">
+          {steps.map((s) => (
+            <div key={s.n} className="border-t border-white/10 pt-6">
+              <div className="flex items-baseline gap-4">
+                <span className="font-display text-5xl font-black italic text-orange-500">
+                  {s.n}
+                </span>
+                <h3 className="font-display text-xl font-bold uppercase tracking-tight">
+                  {s.t}
+                </h3>
+              </div>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{s.d}</p>
             </div>
           ))}
         </div>
@@ -304,52 +336,59 @@ function Brands() {
 }
 
 function Premium() {
-  const items = [
-    "Confecção de chaves Audi (linha A/Q completa)",
-    "BMW chaves CAS, FEM e BDC",
-    "Mercedes-Benz chaves IR e FBS4",
-    "Land Rover / Range Rover KVM",
-    "Porsche e Volvo Smart Key",
-    "Atendimento com hora marcada",
-  ];
   return (
-    <section className="relative overflow-hidden border-b border-border/60 py-20 sm:py-28">
-      <div className="bg-grid absolute inset-0 opacity-40" />
-      <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand/40 bg-brand/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand">
-            <Crown className="h-3.5 w-3.5" /> Linha Premium
-          </div>
-          <h2 className="mt-5 font-display text-4xl font-black leading-tight sm:text-5xl">
-            Especialistas em <span className="text-brand">carros importados</span> e linha premium.
-          </h2>
-          <p className="mt-5 text-muted-foreground">
-            Investimos em equipamentos originais e atualizações constantes para entregar o que poucos
-            chaveiros oferecem: serviço completo para Audi, BMW, Mercedes, Land Rover, Porsche e
-            Volvo — com a mesma precisão de uma concessionária.
-          </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {items.map((i) => (
-              <li key={i} className="flex items-start gap-2 text-sm">
-                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" />
-                <span>{i}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {[
-            { icon: Cpu, t: "Reset de Airbag", d: "Pós-colisão em todas as marcas, incluindo GWM e BYD." },
-            { icon: Car, t: "Smart Key", d: "Programação de chaves presenciais com proximidade." },
-            { icon: Clock, t: "Agilidade", d: "Atendimento ágil, sem deslocar o carro à concessionária." },
-            { icon: ShieldCheck, t: "Garantia", d: "Todos os serviços com garantia técnica." },
-          ].map((c) => (
-            <div key={c.t} className="rounded-xl border border-border bg-surface p-5">
-              <c.icon className="h-6 w-6 text-brand" />
-              <div className="mt-4 font-display text-lg font-bold">{c.t}</div>
-              <p className="mt-1 text-sm text-muted-foreground">{c.d}</p>
+    <section id="premium" className="relative overflow-hidden border-b border-white/10 bg-zinc-900 py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="flex flex-col items-center gap-16 md:flex-row">
+          <div className="relative w-full md:w-1/2">
+            <div className="absolute -inset-4 translate-x-4 translate-y-4 border border-orange-500/30" />
+            <img
+              src={premiumKey}
+              alt="Chave de presença premium sobre bancada de diagnóstico"
+              width={1024}
+              height={1280}
+              loading="lazy"
+              className="relative z-10 aspect-[4/5] w-full object-cover"
+            />
+            <div className="absolute -bottom-8 -left-8 z-20 bg-orange-500 p-8">
+              <div className="font-display text-6xl font-black italic leading-none text-black">
+                +10
+              </div>
+              <Mono className="mt-2 block text-[10px] font-bold uppercase tracking-widest text-black">
+                Anos de experiência
+              </Mono>
             </div>
-          ))}
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+              [ Linha Premium ]
+            </Mono>
+            <h2 className="mt-4 font-display text-4xl font-black uppercase italic leading-[0.95] tracking-tight sm:text-5xl">
+              Segurança
+              <br />
+              <span className="text-orange-500">sem concessões.</span>
+            </h2>
+            <p className="mt-6 max-w-xl text-base text-zinc-400">
+              Investimos em equipamentos e atualizações constantes para entregar
+              o que poucos chaveiros oferecem em Brasília: serviço completo de
+              chaves codificadas para Audi, BMW, Mercedes, Land Rover, Porsche e
+              Volvo — com a mesma precisão de uma concessionária.
+            </p>
+            <div className="mt-10 space-y-7">
+              {pillars.map((p) => (
+                <div key={p.t} className="flex gap-6">
+                  <div className="mt-1 h-10 w-px shrink-0 bg-orange-500" />
+                  <div>
+                    <h4 className="font-display text-sm font-bold uppercase tracking-widest">
+                      {p.t}
+                    </h4>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-400">{p.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -358,14 +397,20 @@ function Premium() {
 
 function About() {
   return (
-    <section id="sobre" className="border-b border-border/60 py-20 sm:py-28">
-      <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
-        <SectionHeader kicker="Quem somos" title="DN Chaveiro Automotivo" />
-        <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-          A DN Chaveiro Automotivo nasceu da paixão por carros e da busca por um atendimento técnico
-          de excelência. Atendemos do veículo popular ao premium com a mesma dedicação — chaves
-          codificadas, cópias, confecção e reset de módulos eletrônicos. Profissionalismo,
-          transparência e tecnologia em cada serviço.
+    <section className="border-b border-white/10 py-24">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+          [ Quem somos ]
+        </Mono>
+        <h2 className="mt-4 font-display text-4xl font-black uppercase italic tracking-tight sm:text-5xl">
+          DN Chaveiro Automotivo
+        </h2>
+        <p className="mt-6 text-base leading-relaxed text-zinc-400 sm:text-lg">
+          A DN nasceu da paixão por carros e da busca por um atendimento técnico
+          de excelência em Brasília. Atendemos do veículo popular ao premium com
+          a mesma dedicação — chaves codificadas, cópias, confecção e reset de
+          módulos eletrônicos. Profissionalismo, transparência e tecnologia em
+          cada serviço.
         </p>
       </div>
     </section>
@@ -374,21 +419,27 @@ function About() {
 
 function FAQ() {
   return (
-    <section id="faq" className="border-b border-border/60 bg-surface/40 py-20 sm:py-28">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6">
-        <SectionHeader kicker="Dúvidas frequentes" title="Tire suas dúvidas" />
-        <Accordion type="single" collapsible className="mt-10 w-full">
-          {faqs.map((f, i) => (
-            <AccordionItem key={f.q} value={`item-${i}`} className="border-border">
-              <AccordionTrigger className="text-left font-display text-lg font-bold uppercase tracking-wide hover:text-brand hover:no-underline">
+    <section id="faq" className="border-b border-white/10 bg-zinc-950 py-28">
+      <div className="mx-auto max-w-3xl px-6">
+        <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+          [ FAQ ]
+        </Mono>
+        <h2 className="mt-4 font-display text-4xl font-black uppercase italic tracking-tight sm:text-5xl">
+          Perguntas <span className="text-orange-500">comuns</span>
+        </h2>
+        <div className="mt-12 space-y-1">
+          {faqs.map((f) => (
+            <details key={f.q} className="group border-b border-white/10 py-5">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left font-display text-sm font-bold uppercase tracking-[0.18em] text-white">
                 {f.q}
-              </AccordionTrigger>
-              <AccordionContent className="text-base leading-relaxed text-muted-foreground">
-                {f.a}
-              </AccordionContent>
-            </AccordionItem>
+                <span className="text-2xl text-orange-500 transition-transform group-open:rotate-45">
+                  +
+                </span>
+              </summary>
+              <p className="mt-5 text-sm leading-relaxed text-zinc-400">{f.a}</p>
+            </details>
           ))}
-        </Accordion>
+        </div>
       </div>
     </section>
   );
@@ -396,73 +447,158 @@ function FAQ() {
 
 function Contact() {
   return (
-    <section id="contato" className="border-b border-border/60 py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeader
-          kicker="Fale com a gente"
-          title="Pronto para atender você"
-          desc="Entre em contato pelo WhatsApp para orçamento rápido ou venha até nossa loja."
-        />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          <ContactCard
-            icon={MessageCircle}
-            title="WhatsApp"
-            value={PHONE_DISPLAY}
-            href={WHATSAPP_URL}
-            cta="Conversar agora"
-          />
-          <ContactCard
-            icon={Phone}
-            title="Telefone"
-            value={PHONE_DISPLAY}
-            href={`tel:+${WHATSAPP}`}
-            cta="Ligar"
-          />
-          <ContactCard
-            icon={MapPin}
-            title="Endereço"
-            value="CSA 02 Lote 07 Loja 01"
-            href="#"
-            cta="PROCON 151"
-          />
+    <section id="contato" className="border-b border-white/10 py-28">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-16 lg:grid-cols-2">
+          <div>
+            <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+              [ Contato ]
+            </Mono>
+            <h2 className="mt-4 font-display text-4xl font-black uppercase italic leading-[0.95] tracking-tight sm:text-5xl">
+              Fale agora com a
+              <br />
+              <span className="text-orange-500">DN.</span>
+            </h2>
+            <p className="mt-6 max-w-md text-zinc-400">
+              Orçamento direto pelo WhatsApp, sem enrolação. Atendemos
+              emergências 24h em toda Brasília e entorno.
+            </p>
+
+            <div className="mt-10 space-y-6">
+              <ContactRow
+                icon={<MessageCircle className="h-5 w-5" />}
+                label="WhatsApp · Linha direta"
+                value={PHONE_DISPLAY}
+                href={WHATSAPP_URL}
+                external
+              />
+              <ContactRow
+                icon={<Phone className="h-5 w-5" />}
+                label="Telefone"
+                value={PHONE_DISPLAY}
+                href={`tel:+${WHATSAPP}`}
+              />
+              <ContactRow
+                icon={<MapPin className="h-5 w-5" />}
+                label="Endereço · Taguatinga Sul"
+                value="CSA 02 Lote 07 Loja 01"
+                href="https://www.google.com/maps/search/?api=1&query=CSA+02+Lote+07+Loja+01+Taguatinga+Sul+Brasilia"
+                external
+              />
+              <ContactRow
+                icon={<Clock className="h-5 w-5" />}
+                label="Horário"
+                value="Seg–Sáb · 08h às 19h"
+              />
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden border border-white/10 bg-zinc-900 p-10">
+            <div className="absolute -right-12 -top-12 h-32 w-32 rounded-full bg-orange-500/10 blur-2xl" />
+            <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500">
+              [ Cartão de visita ]
+            </Mono>
+            <h3 className="mt-4 font-display text-3xl font-black uppercase italic tracking-tight underline decoration-orange-500 decoration-2 underline-offset-[10px]">
+              DN Chaveiro Automotivo
+            </h3>
+
+            <div className="mt-10 space-y-8">
+              <div>
+                <Mono className="block text-[10px] uppercase tracking-[0.25em] text-zinc-500">
+                  Localização física
+                </Mono>
+                <p className="mt-2 font-display text-lg font-bold uppercase leading-tight">
+                  CSA 02 Lote 07 Loja 01
+                  <br />
+                  Taguatinga Sul · Brasília — DF
+                </p>
+              </div>
+
+              <div>
+                <Mono className="block text-[10px] uppercase tracking-[0.25em] text-zinc-500">
+                  Linha direta · WhatsApp
+                </Mono>
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block font-display text-4xl font-black italic tracking-tight text-orange-500 hover:text-orange-400"
+                >
+                  {PHONE_DISPLAY}
+                </a>
+              </div>
+
+              <div className="flex items-end justify-between gap-6 border-t border-white/10 pt-6">
+                <Mono className="text-[10px] uppercase tracking-widest text-zinc-600">
+                  PROCON DF · 151
+                </Mono>
+                <div className="text-right">
+                  <Mono className="block text-[10px] uppercase tracking-widest text-zinc-500">
+                    Funcionamento
+                  </Mono>
+                  <p className="text-xs font-bold">SEG – SÁB · 08h às 19h</p>
+                  <Mono className="block text-[10px] font-black uppercase text-orange-500">
+                    Emergência 24h
+                  </Mono>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function ContactCard({
-  icon: Icon, title, value, href, cta,
+function ContactRow({
+  icon, label, value, href, external,
 }: {
-  icon: typeof Phone; title: string; value: string; href: string; cta: string;
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  href?: string;
+  external?: boolean;
 }) {
+  const inner = (
+    <>
+      <div className="flex h-11 w-11 shrink-0 items-center justify-center border border-white/10 bg-zinc-900 text-orange-500 transition group-hover:border-orange-500">
+        {icon}
+      </div>
+      <div>
+        <Mono className="block text-[10px] uppercase tracking-[0.25em] text-zinc-500">
+          {label}
+        </Mono>
+        <p className="font-display text-xl font-bold uppercase tracking-tight">
+          {value}
+        </p>
+      </div>
+    </>
+  );
+  if (!href) {
+    return <div className="group flex items-center gap-5">{inner}</div>;
+  }
   return (
     <a
       href={href}
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noopener noreferrer"
-      className="group rounded-xl border border-border bg-surface p-6 transition hover:-translate-y-1 hover:border-brand"
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className="group flex items-center gap-5"
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-brand text-brand-foreground">
-        <Icon className="h-6 w-6" />
-      </div>
-      <div className="mt-5 text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">
-        {title}
-      </div>
-      <div className="mt-1 font-display text-2xl font-bold">{value}</div>
-      <div className="mt-3 text-sm font-semibold text-brand transition group-hover:underline">
-        {cta} →
-      </div>
+      {inner}
     </a>
   );
 }
 
 function Footer() {
   return (
-    <footer className="bg-background py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-muted-foreground sm:flex-row sm:px-6">
-        <Logo />
-        <div>© {new Date().getFullYear()} DN Chaveiro Automotivo. Todos os direitos reservados.</div>
+    <footer className="bg-black py-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
+        <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
+          DN Chaveiro Automotivo © {new Date().getFullYear()} · Brasília · DF
+        </Mono>
+        <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-700">
+          Excelência em segurança veicular
+        </Mono>
       </div>
     </footer>
   );
@@ -474,14 +610,14 @@ function FloatingWhatsApp() {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Fale conosco no WhatsApp"
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-full bg-brand px-5 py-3 font-bold text-brand-foreground shadow-2xl shadow-brand/40 transition hover:scale-105"
+      aria-label="Falar com a DN Chaveiro no WhatsApp"
+      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 bg-orange-500 px-5 py-3 text-sm font-black uppercase tracking-widest text-black shadow-2xl shadow-orange-900/40 transition hover:scale-105"
     >
       <MessageCircle className="h-5 w-5" />
       <span className="hidden sm:inline">WhatsApp</span>
       <span className="absolute -right-1 -top-1 flex h-3 w-3">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
-        <span className="relative inline-flex h-3 w-3 rounded-full bg-brand" />
+        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-400 opacity-75" />
+        <span className="relative inline-flex h-3 w-3 rounded-full bg-orange-500" />
       </span>
     </a>
   );
