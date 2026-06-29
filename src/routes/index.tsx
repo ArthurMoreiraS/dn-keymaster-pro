@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 import workshopBg from "@/assets/workshop-bg.jpg";
 import premiumKey from "@/assets/premium-key.jpg";
-import dnLogo from "@/assets/dn-logo-v3.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -123,11 +123,9 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <img
-            src={dnLogo.url}
-            alt="DN Chaveiro Automotivo"
-            className="h-10 w-auto bg-white px-2 py-1"
-          />
+          <span className="font-display text-lg font-black uppercase italic tracking-tight text-white">
+            DN <span className="text-orange-500">Chaveiro</span>
+          </span>
         </a>
         <nav
           className="hidden items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex"
@@ -588,7 +586,7 @@ function Footer() {
   return (
     <footer className="bg-black py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-        <img src={dnLogo.url} alt="DN Chaveiro Automotivo" className="h-10 w-auto bg-white px-2 py-1" />
+        <span className="font-display text-lg font-black uppercase italic tracking-tight text-white">DN <span className="text-orange-500">Chaveiro</span></span>
         <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
           DN Chaveiro Automotivo © {new Date().getFullYear()} · Brasília · DF
         </Mono>
