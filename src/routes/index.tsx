@@ -123,17 +123,11 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center bg-orange-500 text-black font-black italic">
-            DN
-          </div>
-          <div className="leading-none">
-            <div className="font-display text-lg font-extrabold tracking-wide">
-              DN CHAVEIRO
-            </div>
-            <Mono className="text-[9px] uppercase tracking-[0.3em] text-zinc-500">
-              Automotivo · Brasília
-            </Mono>
-          </div>
+          <img
+            src={dnLogo.url}
+            alt="DN Chaveiro Automotivo"
+            className="h-10 w-auto bg-white px-2 py-1"
+          />
         </a>
         <nav
           className="hidden items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex"
