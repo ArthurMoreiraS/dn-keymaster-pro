@@ -587,7 +587,8 @@ function ContactRow({
 function Footer() {
   return (
     <footer className="bg-black py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+        <img src={dnLogo.url} alt="DN Chaveiro Automotivo" className="h-10 w-auto bg-white px-2 py-1" />
         <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
           DN Chaveiro Automotivo © {new Date().getFullYear()} · Brasília · DF
         </Mono>
