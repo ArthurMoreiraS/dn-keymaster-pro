@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 import workshopBg from "@/assets/workshop-bg.jpg";
 import premiumKey from "@/assets/premium-key.jpg";
+import dnLogo from "@/assets/dn-logo.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,8 +18,8 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHATSAPP = "5561998507816";
-const PHONE_DISPLAY = "(61) 99850-7816";
+const WHATSAPP = "5561997787174";
+const PHONE_DISPLAY = "(61) 99778-7174";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Olá! Vim pelo site da DN Chaveiro Automotivo e gostaria de um orçamento.",
 )}`;
@@ -122,17 +123,11 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center bg-orange-500 text-black font-black italic">
-            DN
-          </div>
-          <div className="leading-none">
-            <div className="font-display text-lg font-extrabold tracking-wide">
-              DN CHAVEIRO
-            </div>
-            <Mono className="text-[9px] uppercase tracking-[0.3em] text-zinc-500">
-              Automotivo · Brasília
-            </Mono>
-          </div>
+          <img
+            src={dnLogo.url}
+            alt="DN Chaveiro Automotivo"
+            className="h-10 w-auto bg-white px-2 py-1"
+          />
         </a>
         <nav
           className="hidden items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex"
@@ -592,7 +587,8 @@ function ContactRow({
 function Footer() {
   return (
     <footer className="bg-black py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 sm:flex-row">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
+        <img src={dnLogo.url} alt="DN Chaveiro Automotivo" className="h-10 w-auto bg-white px-2 py-1" />
         <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
           DN Chaveiro Automotivo © {new Date().getFullYear()} · Brasília · DF
         </Mono>
