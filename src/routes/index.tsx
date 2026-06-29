@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 import workshopBg from "@/assets/workshop-bg.jpg";
 import premiumKey from "@/assets/premium-key.jpg";
-import dnLogo from "@/assets/dn-logo.png.asset.json";
+import dnLogo from "@/assets/dn-logo-v2.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
