@@ -18,8 +18,8 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const WHATSAPP = "5561997787174";
-const PHONE_DISPLAY = "(61) 99778-7174";
+const WHATSAPP = "5561993787174";
+const PHONE_DISPLAY = "(61) 99378-7174";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Olá! Vim pelo site da DN Chaveiro Automotivo e gostaria de um orçamento.",
 )}`;
