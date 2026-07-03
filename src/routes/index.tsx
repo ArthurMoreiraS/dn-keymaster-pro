@@ -481,7 +481,7 @@ function Contact() {
               <ContactRow
                 icon={<Clock className="h-5 w-5" />}
                 label="Horário"
-                value="Seg–Sáb · 08h às 19h"
+                value="Seg–Sex 08h00–18h00 · Sáb 08h00–12h00"
               />
             </div>
           </div>
