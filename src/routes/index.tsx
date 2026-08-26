@@ -45,8 +45,8 @@ const services = [
   },
   {
     n: "03",
-    t: "Linha Premium & Smart Key",
-    d: "Programação completa de chaves de presença para Audi, BMW, Mercedes-Benz, Land Rover, Porsche e Volvo. Recuperação total de chaves perdidas.",
+    t: "Confecção - Todas as Chaves Perdidas",
+    d: "Confecção de novas chaves para linha Nacional e Premium como Audi, BMW, Mercedes-Benz, Land Rover, Porsche, Volvo e outros, mesmo quando o cliente perde todas as chaves de seu veículo.",
     tags: ["CAS / FEM / BDC", "FBS4", "KVM"],
   },
 ];
