@@ -179,16 +179,17 @@ function Hero() {
             Taguatinga Sul · Brasília · DF
           </div>
 
-          <h1 className="font-display text-6xl font-black leading-[0.88] tracking-tight sm:text-7xl lg:text-8xl">
-            CHAVES DE
+          <h1 className="font-display text-5xl font-black leading-[0.88] tracking-tight sm:text-6xl lg:text-7xl">
+            CHAVES
             <br />
-            <span className="italic text-orange-500">PRECISÃO.</span>
+            <span className="italic text-orange-500">AUTOMOTIVAS</span>
+            <br />
+            <span className="text-white">CODIFICADAS.</span>
           </h1>
 
           <p className="mt-8 max-w-xl text-lg font-medium leading-snug text-zinc-400 sm:text-xl">
-            Do popular ao premium. Codificação técnica de chaves, cópias e reset
-            de módulo de airbag para linha alemã, nacional e elétrica
-            (GWM &amp; BYD).
+            Do Popular à linha Premium. Cópia, Confecção e Codificação de
+            Chaves Simples, Canivete e de Presença.
           </p>
 
           <div className="mt-10 flex flex-wrap gap-4">
@@ -198,7 +199,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-orange-500 px-8 py-4 text-sm font-black uppercase tracking-widest text-black transition hover:bg-orange-400"
             >
-              <MessageCircle className="h-4 w-4" /> Emergência 24h
+              <MessageCircle className="h-4 w-4" /> FALE AGORA
             </a>
             <a
               href="#servicos"
