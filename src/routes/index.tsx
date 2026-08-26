@@ -39,8 +39,8 @@ const services = [
   },
   {
     n: "02",
-    t: "Reset de Módulo de Airbag",
-    d: "Reset de crash data pós-colisão em todas as marcas — incluindo a linha elétrica GWM (Haval, Ora) e BYD (Dolphin, Seal, Song).",
+    t: "Reset de Módulos de Airbag",
+    d: "Reset de crash data pós-colisão em veículos de todas as marcas e modelos, incluindo automóveis elétricos como GWM (Haval, Ora) e BYD (Dolphin, Seal, Song).",
     tags: ["GWM", "BYD", "PÓS-COLISÃO"],
   },
   {
