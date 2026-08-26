@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
 import workshopBg from "@/assets/workshop-bg.jpg";
 import premiumKey from "@/assets/premium-key.jpg";
+import logoDn from "@/assets/logo-dn.jpg";
 
 
 export const Route = createFileRoute("/")({
@@ -11,7 +12,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Chaveiro automotivo em Brasília (Taguatinga Sul). Chaves codificadas e cópias para Audi, BMW, Mercedes, Land Rover, GWM e BYD, além de reset de módulo de airbag. Atendimento 24h.",
+          "Chaveiro automotivo em Brasília (Taguatinga Sul). Chaves codificadas e cópias para Audi, BMW, Mercedes, Land Rover, GWM e BYD, além de reset de módulo de airbag. Seg a sex, 08h às 18h, e sábado, 08h às 12h.",
       },
     ],
   }),
@@ -23,6 +24,8 @@ const PHONE_DISPLAY = "(61) 99378-7174";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Olá! Vim pelo site da DN Chaveiro Automotivo e gostaria de um orçamento.",
 )}`;
+const MAPS_URL =
+  "https://www.google.com/maps?um=1&ie=UTF-8&fb=1&gl=br&sa=X&geocode=Kc_hXTeIM1qTMYhc2bEKyK-h&daddr=St.+A+Sul+CSA+2+Lj+1+-+Taguatinga+Sul,+Bras%C3%ADlia+-+DF,+72015-025";
 
 const brands = [
   "AUDI", "BMW", "MERCEDES", "LAND ROVER", "PORSCHE", "VOLVO",
@@ -57,23 +60,23 @@ const pillars = [
     d: "Scanners e softwares homologados — os mesmos usados em concessionárias alemãs, garantindo a integridade dos módulos eletrônicos.",
   },
   {
-    t: "Atendimento no local",
-    d: "Equipe móvel pronta para abertura técnica sem danos e confecção de chaves em qualquer ponto de Brasília e entorno.",
+    t: "Atendimento no local do veículo",
+    d: "Perdeu as chaves ou o carro travou? Vamos até onde o veículo está, em Brasília e entorno, para abertura sem danos e confecção da chave. Os demais serviços são realizados na loja, em Taguatinga Sul.",
   },
   {
-    t: "Garantia técnica",
-    d: "Toda codificação acompanha backup de dados e garantia formal de funcionamento da chave e do módulo.",
+    t: "Garantia",
+    d: "Confiamos tanto na qualidade dos serviços que prestamos que ofertamos o dobro do prazo legal exigido por lei.",
   },
 ];
 
 const faqs = [
   {
     q: "Vocês fazem chaves para Audi, BMW e Mercedes?",
-    a: "Sim. Trabalhamos com toda a linha premium — Audi (A/Q completa), BMW (CAS, FEM, BDC), Mercedes-Benz (IR e FBS4), Land Rover (KVM), Porsche e Volvo — com equipamentos homologados.",
+    a: "Sim. Trabalhamos com toda a linha premium — Audi (A/Q completa), BMW (CAS, FEM, BDC), Mercedes-Benz (FBS3), Land Rover (KVM), Porsche e Volvo — com equipamentos homologados.",
   },
   {
     q: "Qual o prazo para uma cópia de chave?",
-    a: "Chaves simples e pantográficas ficam prontas em cerca de 20 minutos. Chaves codificadas levam de 40 a 90 minutos, dependendo do modelo. Linha premium pode exigir agendamento da chave virgem.",
+    a: "Chaves simples ficam prontas em até 30 minutos. Chaves codificadas levam de 40 a 90 minutos, dependendo do modelo do veículo. Linha premium pode exigir mais tempo, a depender do sistema embarcado, modelo e ano do carro.",
   },
   {
     q: "Perdi todas as chaves. E agora?",
@@ -82,10 +85,6 @@ const faqs = [
   {
     q: "O que é o reset do módulo de airbag?",
     a: "Após uma colisão, o módulo trava com códigos de falha. Fazemos o reset do crash data deixando o módulo original pronto para uso — inclusive em GWM e BYD.",
-  },
-  {
-    q: "Atendem em domicílio e em emergências?",
-    a: "Sim. Atendemos emergências 24h pelo WhatsApp em toda Brasília e regiões próximas. Confirme a localização antes do deslocamento.",
   },
 ];
 
@@ -123,6 +122,13 @@ function Header() {
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0a0a0a]/85 backdrop-blur">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="#top" className="flex items-center gap-3">
+          <span className="block h-11 w-11 shrink-0 overflow-hidden rounded-full ring-1 ring-white/10">
+            <img
+              src={logoDn}
+              alt="DN Chaveiro Automotivo"
+              className="h-full w-full scale-[1.18] object-cover"
+            />
+          </span>
           <span className="font-display text-lg font-black uppercase italic tracking-tight text-white">
             DN <span className="text-orange-500">Chaveiro</span>
           </span>
@@ -135,9 +141,19 @@ function Header() {
           <a href="#premium" className="hover:text-orange-500 transition">Premium</a>
           <a href="#faq" className="hover:text-orange-500 transition">FAQ</a>
           <a href="#contato" className="hover:text-orange-500 transition">Contato</a>
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-orange-500 transition"
+          >
+            Localização
+          </a>
         </nav>
         <a
-          href={`tel:+${WHATSAPP}`}
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="hidden items-center gap-2 border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider hover:border-orange-500 sm:inline-flex"
         >
           <Phone className="h-3.5 w-3.5 text-orange-500" />
@@ -302,8 +318,8 @@ function Services() {
 function Process() {
   const steps = [
     { n: "01", t: "Diagnóstico", d: "Identificação dos problemas com a chave ou com módulo imobilizador, por meio do que há de melhor em equipamentos no mercado automotivo." },
-    { n: "02", t: "Execução", d: "Corte, programação ou reset realizado com equipamento original." },
-    { n: "03", t: "Entrega & Garantia", d: "Teste presencial, backup dos dados e garantia formal." },
+    { n: "02", t: "Execução", d: "Programação das chaves, transponder e telecomando, considerando ano e modelo do veículo, bem como corte da lâmina por meio de máquinas computadorizadas." },
+    { n: "03", t: "Entrega & Garantia", d: "Apresentação ao cliente dos serviços executados, teste de abertura e fechamento do veículo, bem como efetuando a partida utilizando a nova chave, seja inserindo e girando a chave na ignição ou por meio do botão Start/Stop, especificamente para chaves de presença (Keyless)." },
   ];
   return (
     <section className="border-b border-white/10 bg-zinc-950 py-24">
@@ -348,7 +364,7 @@ function Premium() {
             />
             <div className="absolute -bottom-8 -left-8 z-20 bg-orange-500 p-8">
               <div className="font-display text-6xl font-black italic leading-none text-black">
-                +10
+                +20
               </div>
               <Mono className="mt-2 block text-[10px] font-bold uppercase tracking-widest text-black">
                 Anos de experiência
@@ -456,8 +472,8 @@ function Contact() {
               <span className="text-orange-500">DN.</span>
             </h2>
             <p className="mt-6 max-w-md text-zinc-400">
-              Orçamento direto pelo WhatsApp, sem enrolação. Atendemos
-              emergências 24h em toda Brasília e entorno.
+              Orçamento direto pelo WhatsApp, sem enrolação. Atendemos de
+              segunda a sexta, das 08h às 18h, e aos sábados, das 08h às 12h.
             </p>
 
             <div className="mt-10 space-y-6">
@@ -472,7 +488,8 @@ function Contact() {
                 icon={<Phone className="h-5 w-5" />}
                 label="Telefone"
                 value={PHONE_DISPLAY}
-                href={`tel:+${WHATSAPP}`}
+                href={WHATSAPP_URL}
+                external
               />
               <ContactRow
                 icon={<MapPin className="h-5 w-5" />}
@@ -534,9 +551,6 @@ function Contact() {
                   </Mono>
                   <p className="text-xs font-bold">SEG – SEX · 08h00 ÀS 18h00</p>
                   <p className="text-xs font-bold">SÁB · 08h00 ÀS 12h00</p>
-                  <Mono className="block text-[10px] font-black uppercase text-orange-500">
-                    Emergência 24h
-                  </Mono>
                 </div>
               </div>
             </div>
@@ -590,7 +604,16 @@ function Footer() {
   return (
     <footer className="bg-black py-10">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row">
-        <span className="font-display text-lg font-black uppercase italic tracking-tight text-white">DN <span className="text-orange-500">Chaveiro</span></span>
+        <span className="flex items-center gap-3">
+          <span className="block h-10 w-10 shrink-0 overflow-hidden rounded-full ring-1 ring-white/10">
+            <img
+              src={logoDn}
+              alt="DN Chaveiro Automotivo"
+              className="h-full w-full scale-[1.18] object-cover"
+            />
+          </span>
+          <span className="font-display text-lg font-black uppercase italic tracking-tight text-white">DN <span className="text-orange-500">Chaveiro</span></span>
+        </span>
         <Mono className="text-[10px] uppercase tracking-[0.4em] text-zinc-600">
           DN Chaveiro Automotivo © {new Date().getFullYear()} · Brasília · DF
         </Mono>

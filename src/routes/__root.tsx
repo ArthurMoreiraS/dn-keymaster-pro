@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoDn from "../assets/logo-dn.jpg";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -83,10 +84,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:title", content: "DN Chaveiro Automotivo" },
       { property: "og:description", content: "Chaves automotivas, linha premium e reset de módulos de airbag. Atendimento rápido e seguro." },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: logoDn },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: logoDn },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "icon", href: logoDn },
+      { rel: "apple-touch-icon", href: logoDn },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Inter:wght@400;500;600;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap" },
