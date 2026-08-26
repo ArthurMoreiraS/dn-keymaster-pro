@@ -301,7 +301,7 @@ function Services() {
 
 function Process() {
   const steps = [
-    { n: "01", t: "Diagnóstico", d: "Identificamos modelo, ano e tipo de chave/módulo via OBD." },
+    { n: "01", t: "Diagnóstico", d: "Identificação dos problemas com a chave ou com módulo imobilizador, por meio do que há de melhor em equipamentos no mercado automotivo." },
     { n: "02", t: "Execução", d: "Corte, programação ou reset realizado com equipamento original." },
     { n: "03", t: "Entrega & Garantia", d: "Teste presencial, backup dos dados e garantia formal." },
   ];
