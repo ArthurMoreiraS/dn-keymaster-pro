@@ -199,7 +199,7 @@ function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 bg-orange-500 px-8 py-4 text-sm font-black uppercase tracking-widest text-black transition hover:bg-orange-400"
             >
-              <MessageCircle className="h-4 w-4" /> Emergência 24h
+              <MessageCircle className="h-4 w-4" /> FALE AGORA
             </a>
             <a
               href="#servicos"
