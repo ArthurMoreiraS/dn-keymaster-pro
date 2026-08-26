@@ -33,8 +33,8 @@ const brands = [
 const services = [
   {
     n: "01",
-    t: "Cópia & Chaves Codificadas",
-    d: "Chaves pantográficas, canivete e telecomandos com transponder original. Programação para frota nacional e importada.",
+    t: "Chaves Codificadas",
+    d: "Chaves simples, canivete, telecomandos e de presença. Programação para todo tipo de chaves veicular nacional e importado.",
     tags: ["VVDI", "AUTEL", "OBDSTAR"],
   },
   {
