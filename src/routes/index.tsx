@@ -261,8 +261,10 @@ function Services() {
               className="border-l border-orange-500 pl-6 text-sm leading-relaxed text-zinc-400"
               style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
             >
-              Laboratório equipado com scanners originais e máquinas de corte
-              computadorizado para máxima fidelidade em chaves codificadas.
+              Temos diversos scanners, programadores, leitores e gravadores de memórias
+              e processadores, bem como máquinas computadorizadas para entregar aos
+              nossos clientes o corte perfeito das lâminas de suas chaves originais
+              ou reservas.
             </p>
           </div>
         </div>
