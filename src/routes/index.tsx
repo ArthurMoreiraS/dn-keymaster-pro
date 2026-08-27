@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, Phone, MapPin, Clock } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Clock, Star } from "lucide-react";
 import workshopBg from "@/assets/workshop-bg.jpg";
 import premiumKey from "@/assets/premium-key.jpg";
 import logoDn from "@/assets/logo-dn.jpg";
@@ -88,6 +88,55 @@ const faqs = [
   },
 ];
 
+const googleReviews = {
+  rating: "5,0",
+  count: 28,
+  profileUrl: "https://www.google.com/maps?cid=11650750709289802888",
+  writeUrl:
+    "https://www.google.com/search?q=chaveiro+automotivo+dn#lrd=0x935a3388375de1cf:0xa1afc80ab1d95c88,3,,,,",
+};
+
+const testimonials = [
+  {
+    name: "Bruno Saraiva",
+    meta: "Local Guide · 20 avaliações",
+    when: "Há 1 mês",
+    text: "Me atendeu após o horário de funcionamento por uma emergência, recomendo muito, pode confiar, sem medo. Muito honesto, atendimento excepcional, ainda se preocupa no pós-venda.",
+    reply:
+      "Grande Bruno, esperamos que o serviço realizado tenha ficado como você precisava! Nossa empresa está a sua disposição! Grande abraço",
+  },
+  {
+    name: "Ester Rodrigues",
+    meta: "3 avaliações",
+    when: "Há 1 mês",
+    text: "Atendimento excelente, chegou no local muito rápido, fez o serviço muito rápido, e de ótima qualidade, indico de olhos fechados, salvou minha semana",
+    reply:
+      "Olá Ester, agradecemos seu contato e esperamos poder lhe atender sempre que precisar de serviços de chaveiro automotivo! Grande abraço!",
+  },
+  {
+    name: "Agrinaldo Fonseca",
+    meta: "2 avaliações",
+    when: "Há 1 mês",
+    text: "Fui atendido pelo pessoal da DN de forma prestativa e rápida. Recomendo os serviços de chaveiro deles.",
+    reply: "Gratidão pela recomendação, agradecemos pela confiança em nossos serviços!",
+  },
+  {
+    name: "Gabriela de Paula",
+    meta: "4 avaliações",
+    when: "Há 1 mês",
+    text: "Perdi todas as chaves do meu carro e eles conseguiram me atender prontamente. Recomendo o serviço desse chaveiro.",
+    reply: "Precisando é só chamar Gabriela! Estamos a sua disposição!",
+  },
+  {
+    name: "Daniel Cunha Pereira",
+    meta: "1 avaliação",
+    when: "Há 1 mês",
+    text: "Trabalham muito bem, foi o único que conseguiu resolver o problema da chave do carro Volvo XC60",
+    reply:
+      "Essa de fato é uma chave mais complexa de se fazer, mas que bom que resolvemos mais esse problema! Grande abraço",
+  },
+];
+
 function Home() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-orange-500 selection:text-black">
@@ -98,6 +147,7 @@ function Home() {
       <Process />
       <Premium />
       <About />
+      <Testimonials />
       <FAQ />
       <Contact />
       <Footer />
@@ -134,18 +184,19 @@ function Header() {
           </span>
         </a>
         <nav
-          className="hidden items-center gap-8 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex"
+          className="hidden items-center gap-6 text-xs font-bold uppercase tracking-widest text-zinc-400 md:flex xl:gap-8"
           style={{ fontFamily: "'JetBrains Mono', ui-monospace, monospace" }}
         >
           <a href="#servicos" className="hover:text-orange-500 transition">Serviços</a>
-          <a href="#premium" className="hover:text-orange-500 transition">Premium</a>
+          <a href="#premium" className="hidden transition hover:text-orange-500 lg:inline">Premium</a>
+          <a href="#depoimentos" className="hover:text-orange-500 transition">Depoimentos</a>
           <a href="#faq" className="hover:text-orange-500 transition">FAQ</a>
           <a href="#contato" className="hover:text-orange-500 transition">Contato</a>
           <a
             href={MAPS_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-orange-500 transition"
+            className="hidden transition hover:text-orange-500 lg:inline"
           >
             Localização
           </a>
@@ -424,6 +475,201 @@ function About() {
           módulos eletrônicos. Profissionalismo, transparência e tecnologia em
           cada serviço.
         </p>
+      </div>
+    </section>
+  );
+}
+
+function GoogleG({ className = "" }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#4285F4"
+        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.76h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+      />
+      <path
+        fill="#34A853"
+        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.76c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"
+      />
+      <path
+        fill="#FBBC05"
+        d="M5.84 14.11a6.6 6.6 0 0 1 0-4.22V7.05H2.18a11 11 0 0 0 0 9.9l3.66-2.84z"
+      />
+      <path
+        fill="#EA4335"
+        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.05l3.66 2.84c.87-2.6 3.3-4.51 6.16-4.51z"
+      />
+    </svg>
+  );
+}
+
+function Stars({ className = "h-4 w-4" }: { className?: string }) {
+  return (
+    <div className="flex gap-0.5" role="img" aria-label="Nota 5 de 5 estrelas">
+      {[0, 1, 2, 3, 4].map((i) => (
+        <Star key={i} className={`${className} fill-amber-400 text-amber-400`} />
+      ))}
+    </div>
+  );
+}
+
+function initials(name: string) {
+  const parts = name.split(" ").filter((w) => w.length > 2);
+  return ((parts[0]?.[0] ?? "") + (parts[1]?.[0] ?? "")).toUpperCase();
+}
+
+const CARD_WIDTH = "w-[86vw] shrink-0 snap-start sm:w-[62vw] md:w-auto md:shrink";
+
+function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
+  return (
+    <article
+      className={`flex flex-col border border-white/10 bg-[#0a0a0a] p-7 transition-colors hover:border-white/25 ${CARD_WIDTH}`}
+    >
+      <div className="flex items-start justify-between gap-4">
+        <div className="flex min-w-0 items-center gap-3">
+          <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-zinc-900 ring-1 ring-orange-500/40">
+            <Mono className="text-xs font-bold text-orange-500">{initials(t.name)}</Mono>
+          </span>
+          <div className="min-w-0">
+            <p className="truncate font-display text-sm font-bold uppercase tracking-wide text-white">
+              {t.name}
+            </p>
+            <Mono className="block text-[10px] uppercase tracking-widest text-zinc-500">
+              {t.meta}
+            </Mono>
+          </div>
+        </div>
+        <GoogleG className="h-5 w-5 shrink-0" />
+      </div>
+
+      <div className="mt-5 flex items-center gap-3">
+        <Stars />
+        <Mono className="text-[10px] uppercase tracking-widest text-zinc-500">{t.when}</Mono>
+      </div>
+
+      <p className="mt-4 text-sm leading-relaxed text-zinc-300">{t.text}</p>
+
+      <div className="mt-auto pt-7">
+        <div className="border-l-2 border-orange-500/40 pl-4">
+          <Mono className="block text-[10px] uppercase tracking-[0.2em] text-zinc-500">
+            Resposta da DN
+          </Mono>
+          <p className="mt-2 text-xs leading-relaxed text-zinc-500">{t.reply}</p>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+function ReviewCTACard() {
+  return (
+    <article
+      className={`flex flex-col justify-center border border-dashed border-orange-500/30 bg-orange-500/[0.04] p-7 ${CARD_WIDTH}`}
+    >
+      <GoogleG className="h-7 w-7" />
+      <h3 className="mt-5 font-display text-2xl font-black uppercase italic leading-[0.95] tracking-tight">
+        Já foi atendido
+        <br />
+        <span className="text-orange-500">pela DN?</span>
+      </h3>
+      <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+        Sua avaliação ajuda outros motoristas de Brasília a encontrarem um chaveiro automotivo de
+        confiança.
+      </p>
+      <a
+        href={googleReviews.writeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-7 inline-flex self-start items-center gap-2 border border-orange-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-orange-500 transition hover:bg-orange-500 hover:text-black"
+      >
+        Escrever avaliação
+      </a>
+    </article>
+  );
+}
+
+function GoogleScoreCard() {
+  return (
+    <div className="border border-white/10 bg-[#0a0a0a] p-8">
+      <div className="flex items-center gap-3">
+        <GoogleG className="h-6 w-6" />
+        <Mono className="text-[10px] font-bold uppercase tracking-[0.25em] text-zinc-400">
+          Avaliações no Google
+        </Mono>
+      </div>
+
+      <div className="mt-6 flex items-end gap-5">
+        <span className="font-display text-6xl font-black italic leading-none text-white">
+          {googleReviews.rating}
+        </span>
+        <div className="pb-1.5">
+          <Stars className="h-5 w-5" />
+          <Mono className="mt-2 block text-[10px] uppercase tracking-widest text-zinc-500">
+            {googleReviews.count} avaliações · Excelente
+          </Mono>
+        </div>
+      </div>
+
+      <div className="mt-8 flex flex-wrap gap-3">
+        <a
+          href={googleReviews.writeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 bg-orange-500 px-5 py-3 text-xs font-black uppercase tracking-widest text-black transition hover:bg-orange-400"
+        >
+          Avaliar no Google
+        </a>
+        <a
+          href={googleReviews.profileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 border border-white/20 px-5 py-3 text-xs font-bold uppercase tracking-widest text-white transition hover:border-orange-500 hover:text-orange-500"
+        >
+          Ver todas
+        </a>
+      </div>
+    </div>
+  );
+}
+
+function Testimonials() {
+  return (
+    <section
+      id="depoimentos"
+      className="relative overflow-hidden border-b border-white/10 bg-zinc-950 py-28"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,oklch(0.72_0.21_47/0.10),transparent_60%)]" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6">
+        <div className="mb-14 grid items-end gap-10 lg:grid-cols-12">
+          <div className="lg:col-span-7">
+            <Mono className="text-[10px] font-bold uppercase tracking-[0.35em] text-orange-500">
+              [ Depoimentos ]
+            </Mono>
+            <h2 className="mt-4 font-display text-5xl font-black uppercase italic leading-[0.9] tracking-tight sm:text-6xl">
+              O que dizem
+              <br />
+              <span className="text-orange-500">nossos clientes.</span>
+            </h2>
+          </div>
+          <div className="lg:col-span-5">
+            <GoogleScoreCard />
+          </div>
+        </div>
+
+        <div
+          className="-mx-6 flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-2 md:overflow-visible md:px-0 md:pb-0 lg:grid-cols-3"
+          style={{ scrollbarWidth: "none" }}
+        >
+          {testimonials.map((t) => (
+            <TestimonialCard key={t.name} t={t} />
+          ))}
+          <ReviewCTACard />
+        </div>
+
+        <Mono className="mt-6 block text-center text-[10px] uppercase tracking-[0.25em] text-zinc-600 md:hidden">
+          ← Arraste para ver mais →
+        </Mono>
       </div>
     </section>
   );
