@@ -125,7 +125,7 @@ function RootShell({ children }: { children: ReactNode }) {
 }
 
 // Google Ads: rótulo da conversão "Clique no WhatsApp" (Ads > Metas > Conversões > Tag)
-const WHATSAPP_CONVERSION_SEND_TO = "AW-18482670082/COLE_O_ROTULO_AQUI";
+const WHATSAPP_CONVERSION_SEND_TO = "AW-18482670082/qzNCCN2js48dEILUnO1E";
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
