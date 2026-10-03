@@ -134,8 +134,24 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+// Google Ads: rótulo da conversão "Clique no WhatsApp" (Ads > Metas > Conversões > Tag)
+const WHATSAPP_CONVERSION_SEND_TO = "AW-18482670082/COLE_O_ROTULO_AQUI";
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    const onClick = (e: MouseEvent) => {
+      const link = (e.target as HTMLElement | null)?.closest?.("a[href*='wa.me']");
+      if (!link) return;
+      const w = window as unknown as { gtag?: (...a: unknown[]) => void; dataLayer?: unknown[] };
+      w.gtag?.("event", "conversion", { send_to: WHATSAPP_CONVERSION_SEND_TO });
+      w.gtag?.("event", "whatsapp_click", { link_url: (link as HTMLAnchorElement).href });
+      w.dataLayer?.push({ event: "whatsapp_click" });
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>
