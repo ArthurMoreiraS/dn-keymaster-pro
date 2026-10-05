@@ -35,18 +35,21 @@ const brands = [
 
 const services = [
   {
+    id: "chaves-codificadas",
     n: "01",
     t: "Chaves Codificadas",
     d: "Chaves simples, canivete, telecomandos e de presença. Programação para todo tipo de chaves veicular nacional e importado.",
     tags: ["VVDI", "AUTEL", "OBDSTAR"],
   },
   {
+    id: "reset-airbag",
     n: "02",
     t: "Reset de Módulos de Airbag",
     d: "Reset de crash data pós-colisão em veículos de todas as marcas e modelos, incluindo automóveis elétricos como GWM (Haval, Ora) e BYD (Dolphin, Seal, Song).",
     tags: ["GWM", "BYD", "PÓS-COLISÃO"],
   },
   {
+    id: "todas-as-chaves-perdidas",
     n: "03",
     t: "Confecção - Todas as Chaves Perdidas",
     d: "Confecção de novas chaves para linha Nacional e Premium como Audi, BMW, Mercedes-Benz, Land Rover, Porsche, Volvo e outros, mesmo quando o cliente perde todas as chaves de seu veículo.",
@@ -336,11 +339,13 @@ function Services() {
           </div>
         </div>
 
+        <div id="abertura-veiculos" className="scroll-mt-24" aria-hidden="true" />
         <div className="grid gap-px border border-white/5 bg-white/5 md:grid-cols-3">
           {services.map((s) => (
             <div
+              id={s.id}
               key={s.n}
-              className="group relative bg-[#0a0a0a] p-10 transition-colors hover:bg-zinc-900/60"
+              className="group relative scroll-mt-24 bg-[#0a0a0a] p-10 transition-colors hover:bg-zinc-900/60"
             >
               <Mono className="text-sm text-orange-500">[ {s.n} ]</Mono>
               <h3 className="mt-6 font-display text-2xl font-bold uppercase leading-tight tracking-tight">
