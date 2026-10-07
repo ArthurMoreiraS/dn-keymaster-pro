@@ -100,7 +100,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     scripts: [
       { src: "https://www.googletagmanager.com/gtag/js?id=AW-18482670082", async: true },
       {
-        children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-18482670082');`,
+        children: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'AW-18482670082');gtag('config', 'G-Y08Z6NHQKK');`,
       },
     ],
   }),
@@ -132,12 +132,23 @@ function RootComponent() {
 
   useEffect(() => {
     const onClick = (e: MouseEvent) => {
-      const link = (e.target as HTMLElement | null)?.closest?.("a[href*='wa.me']");
-      if (!link) return;
+      const target = e.target as HTMLElement | null;
+      const whatsappLink = target?.closest?.("a[href*='wa.me']") as HTMLAnchorElement | null;
+      const phoneLink = target?.closest?.("a[href^='tel:']") as HTMLAnchorElement | null;
+      if (!whatsappLink && !phoneLink) return;
+
       const w = window as unknown as { gtag?: (...a: unknown[]) => void; dataLayer?: unknown[] };
-      w.gtag?.("event", "conversion", { send_to: WHATSAPP_CONVERSION_SEND_TO });
-      w.gtag?.("event", "whatsapp_click", { link_url: (link as HTMLAnchorElement).href });
-      w.dataLayer?.push({ event: "whatsapp_click" });
+
+      if (whatsappLink) {
+        w.gtag?.("event", "conversion", { send_to: WHATSAPP_CONVERSION_SEND_TO });
+        w.gtag?.("event", "whatsapp_click", { link_url: whatsappLink.href });
+        w.dataLayer?.push({ event: "whatsapp_click", link_url: whatsappLink.href });
+      }
+
+      if (phoneLink) {
+        w.gtag?.("event", "phone_click", { link_url: phoneLink.href });
+        w.dataLayer?.push({ event: "phone_click", link_url: phoneLink.href });
+      }
     };
     document.addEventListener("click", onClick, true);
     return () => document.removeEventListener("click", onClick, true);

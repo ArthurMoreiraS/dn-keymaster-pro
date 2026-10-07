@@ -21,6 +21,7 @@ export const Route = createFileRoute("/")({
 
 const WHATSAPP = "5561993787174";
 const PHONE_DISPLAY = "(61) 99378-7174";
+const PHONE_URL = "tel:+5561993787174";
 const WHATSAPP_URL = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(
   "Olá! Vim pelo site da DN Chaveiro Automotivo e gostaria de um orçamento.",
 )}`;
@@ -739,8 +740,7 @@ function Contact() {
                 icon={<Phone className="h-5 w-5" />}
                 label="Telefone"
                 value={PHONE_DISPLAY}
-                href={WHATSAPP_URL}
-                external
+                href={PHONE_URL}
               />
               <ContactRow
                 icon={<MapPin className="h-5 w-5" />}
