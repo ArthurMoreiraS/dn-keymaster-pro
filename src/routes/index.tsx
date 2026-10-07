@@ -206,9 +206,7 @@ function Header() {
           </a>
         </nav>
         <a
-          href={WHATSAPP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={PHONE_URL}
           className="hidden items-center gap-2 border border-white/15 px-4 py-2 text-xs font-bold uppercase tracking-wider hover:border-orange-500 sm:inline-flex"
         >
           <Phone className="h-3.5 w-3.5 text-orange-500" />
